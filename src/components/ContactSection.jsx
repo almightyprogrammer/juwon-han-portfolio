@@ -37,8 +37,7 @@ export const ContactSection = () => {
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Have a project in mind or want to collaborate? Feel free to reach out.
-          I'm always open to discussing new opportunities.
+          Think I'd be a great addition to your team or project? Feel free to reach out. I'm always on the look out to expand my knowledge and discuss new opportunities!
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -53,13 +52,12 @@ export const ContactSection = () => {
                 <div className="p-3 rounded-full bg-primary/10">
                   <Mail className="h-6 w-6 text-primary" />{" "}
                 </div>
-                <div>
-                  <h4 className="font-medium"> Email</h4>
+                <div className="text-center pt-3">
                   <a
-                    href="mailto:hello@gmail.com"
+                    href="mailto:lehman0308@gmail.com"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    hello@gmail.com
+                    lehman0308@gmail.com
                   </a>
                 </div>
               </div>
@@ -67,13 +65,13 @@ export const ContactSection = () => {
                 <div className="p-3 rounded-full bg-primary/10">
                   <Phone className="h-6 w-6 text-primary" />{" "}
                 </div>
-                <div>
-                  <h4 className="font-medium"> Phone</h4>
+                <div className="text-center pt-3">
+                  
                   <a
-                    href="tel:+11234567890"
+                    href="tel:+64211155584"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    +1 (123) 456-7890
+                    +64211155584
                   </a>
                 </div>
               </div>
@@ -81,10 +79,9 @@ export const ContactSection = () => {
                 <div className="p-3 rounded-full bg-primary/10">
                   <MapPin className="h-6 w-6 text-primary" />{" "}
                 </div>
-                <div>
-                  <h4 className="font-medium"> Location</h4>
+                <div className="text-center pt-3">
                   <a className="text-muted-foreground hover:text-primary transition-colors">
-                    Vancouver, BC, Canada
+                    Auckland, New Zealand
                   </a>
                 </div>
               </div>
@@ -130,7 +127,7 @@ export const ContactSection = () => {
                   name="name"
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-                  placeholder="Pedro Machado..."
+                  placeholder="John Doe..."
                 />
               </div>
 
@@ -148,7 +145,7 @@ export const ContactSection = () => {
                   name="email"
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-                  placeholder="john@gmail.com"
+                  placeholder="johndoe123@gmail.com"
                 />
               </div>
 

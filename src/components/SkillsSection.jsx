@@ -3,40 +3,48 @@ import { cn } from "@/lib/utils";
 
 const skills = [
   // Frontend
-  { name: "HTML/CSS", level: 95, category: "frontend" },
-  { name: "JavaScript", level: 90, category: "frontend" },
-  { name: "React", level: 90, category: "frontend" },
-  { name: "TypeScript", level: 85, category: "frontend" },
-  { name: "Tailwind CSS", level: 90, category: "frontend" },
-  { name: "Next.js", level: 80, category: "frontend" },
+  { name: "HTML/CSS", icon: "/icons/html.svg", category: "frontend" },
+  { name: "JavaScript", icon: "/icons/javascript.svg", category: "frontend" },
+  { name: "React", icon: "/icons/react.svg", category: "frontend" },
+  { name: "Tailwind CSS", icon: "/icons/tailwind.svg", category: "frontend" },
+  { name: "Bootstrap", icon: "/icons/bootstrap.svg", category: "frontend" },
 
   // Backend
-  { name: "Node.js", level: 80, category: "backend" },
-  { name: "Express", level: 75, category: "backend" },
-  { name: "MongoDB", level: 70, category: "backend" },
-  { name: "PostgreSQL", level: 65, category: "backend" },
-  { name: "GraphQL", level: 60, category: "backend" },
+  { name: "Node.js", icon: "/icons/nodejs.svg", category: "backend" },
+  { name: "Express", icon: "/icons/express.svg", category: "backend" },
+  { name: "PostgreSQL", icon: "/icons/postgresql.svg", category: "backend" },
+  { name: "Django", icon: "/icons/django.svg", category: "backend" },
 
   // Tools
-  { name: "Git/GitHub", level: 90, category: "tools" },
-  { name: "Docker", level: 70, category: "tools" },
-  { name: "Figma", level: 85, category: "tools" },
-  { name: "VS Code", level: 95, category: "tools" },
+  { name: "Git/GitHub", icon: "/icons/github.svg", category: "tools" },
+  { name: "Docker", icon: "/icons/docker.svg", category: "tools" },
+  { name: "Figma", icon: "/icons/figma.svg", category: "tools" },
+  { name: "AWS", icon: "/icons/aws.svg", category: "tools" },
+  { name: "Linux", icon: "/icons/linux.svg", category: "tools" },
+
+  // Languages
+  { name: "Python", icon: "/icons/python.svg", category: "languages" },
+  { name: "C#", icon: "/icons/csharp.svg", category: "languages" },
+  { name: "Java", icon: "/icons/java.svg", category: "languages" },
+  { name: "JavaScript", icon: "/icons/javascript.svg", category: "languages" },
+  { name: "SQL", icon: "/icons/sql.svg", category: "languages" },
+  { name: "MATLAB", icon: "/icons/matlab.svg", category: "languages" },
 ];
 
-const categories = ["all", "frontend", "backend", "tools"];
+const categories = ["languages", "frontend", "backend", "tools"];
 
 export const SkillsSection = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("languages");
 
   const filteredSkills = skills.filter(
     (skill) => activeCategory === "all" || skill.category === activeCategory
   );
+
   return (
     <section id="skills" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          My <span className="text-primary"> Skills</span>
+          My <span className="text-primary">Technologies</span>
         </h2>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -48,7 +56,7 @@ export const SkillsSection = () => {
                 "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
                 activeCategory === category
                   ? "bg-primary text-primary-foreground"
-                  : "bg-secondary/70 text-forefround hover:bd-secondary"
+                  : "bg-secondary/70 text-foreground hover:bg-secondary"
               )}
             >
               {category}
@@ -60,23 +68,16 @@ export const SkillsSection = () => {
           {filteredSkills.map((skill, key) => (
             <div
               key={key}
-              className="bg-card p-6 rounded-lg shadow-xs card-hover"
+              className="bg-card p-6 rounded-lg shadow-xs card-hover flex flex-col items-center text-center"
             >
-              <div className="text-left mb-4">
-                <h3 className="font-semibold text-lg"> {skill.name}</h3>
-              </div>
-              <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
-                <div
-                  className="bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
-                  style={{ width: skill.level + "%" }}
+              {skill.icon && (
+                <img
+                  src={skill.icon}
+                  alt={`${skill.name} icon`}
+                  className="w-12 h-12 mb-3 object-contain"
                 />
-              </div>
-
-              <div className="text-right mt-1">
-                <span className="text-sm text-muted-foreground">
-                  {skill.level}%
-                </span>
-              </div>
+              )}
+              <h3 className="font-semibold text-lg">{skill.name}</h3>
             </div>
           ))}
         </div>
